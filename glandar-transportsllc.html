@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glandar Transports — Reliable Logistics, Unmatched Efficiency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-dim: #8a6e2e;
+      --charcoal: #141416;
+      --charcoal-mid: #1c1c20;
+      --charcoal-light: #242428;
+      --navy: #0A1628;
+      --navy-mid: #0f2040;
+      --steel: #9BA4B5;
+      --white: #F5F3EE;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--charcoal);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── GOLD TEXT ── */
+    .text-gold { color: var(--gold); }
+    .text-gold-light { color: var(--gold-light); }
+    .text-steel { color: var(--steel); }
+
+    /* ── GOLD BORDER ── */
+    .border-gold { border-color: var(--gold); }
+
+    /* ── NAV ── */
+    #navbar {
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(20,20,22,0.95) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .nav-link {
+      position: relative;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--steel);
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80') center center / cover no-repeat;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(10,22,40,0.97) 0%,
+        rgba(10,22,40,0.85) 45%,
+        rgba(20,20,22,0.6) 100%
+      );
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to top, var(--charcoal), transparent);
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--white);
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 300;
+      color: var(--steel);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      background-size: 200% auto;
+      color: var(--charcoal);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s ease, transform 0.2s, box-shadow 0.3s;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 32px;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .btn-outline:hover {
+      background: rgba(201,168,76,0.1);
+      box-shadow: 0 0 30px rgba(201,168,76,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+    }
+
+    /* ── GOLD DIVIDER ── */
+    .gold-rule {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    /* ── STAT CARD ── */
+    .stat-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      background: linear-gradient(135deg, rgba(28,28,32,0.8), rgba(15,32,64,0.4));
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-card:hover {
+      border-color: rgba(201,168,76,0.5);
+      transform: translateY(-4px);
+    }
+
+    /* ── SERVICE CARD ── */
+    .service-card {
+      border: 1px solid rgba(201,168,76,0.15);
+      background: linear-gradient(145deg, var(--charcoal-light), var(--charcoal-mid));
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+      transition: height 0.4s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .service-card:hover::before { height: 100%; }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    /* ── TESTIMONIAL CARD ── */
+    .testimonial-card {
+      background: linear-gradient(145deg, var(--charcoal-light), rgba(15,32,64,0.3));
+      border: 1px solid rgba(201,168,76,0.12);
+      position: relative;
+      transition: all 0.3s;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -18px; left: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: 0.1;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .testimonial-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+
+    /* ── FLEET SECTION ── */
+    .fleet-bg {
+      background:
+        linear-gradient(to bottom, var(--charcoal), rgba(10,22,40,0.6)),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2000&q=80') center/cover;
+    }
+
+    .fleet-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── CONTACT ── */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid rgba(201,168,76,0.15);
+      background: rgba(28,28,32,0.5);
+      transition: border-color 0.3s;
+    }
+    .contact-item:hover { border-color: rgba(201,168,76,0.4); }
+    .contact-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(to bottom, var(--charcoal-mid), #0c0c0e);
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    /* ── MOBILE MENU ── */
+    #mobile-menu {
+      background: rgba(20,20,22,0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    /* ── SCROLL TO TOP ── */
+    #scroll-top {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      width: 44px; height: 44px;
+      background: var(--gold);
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      z-index: 999;
+    }
+    #scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #scroll-top:hover { background: var(--gold-light); }
+
+    /* ── ANIMATED COUNTER ── */
+    .counter { display: inline-block; }
+
+    /* ── WAVY SEPARATOR ── */
+    .gold-stripe {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+      opacity: 0.5;
+    }
+
+    /* ── VEHICLE BADGE ── */
+    .vehicle-badge {
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(28,28,32,0.6);
+      transition: all 0.3s;
+    }
+    .vehicle-badge:hover {
+      border-color: rgba(201,168,76,0.5);
+      background: rgba(28,28,32,0.9);
+      transform: scale(1.03);
+    }
+
+    /* ── STAR ── */
+    .stars { color: var(--gold); letter-spacing: 2px; }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════ NAV ══════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-5 px-6 md:px-12 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-3 no-underline">
+      <div style="width:38px;height:38px;background:linear-gradient(135deg,#C9A84C,#E8C96A);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))">
+        <i class="fa-solid fa-truck" style="color:#141416;font-size:0.9rem"></i>
+      </div>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0.1em;color:#F5F3EE;">GLANDAR <span class="text-gold">TRANSPORTS L.L.C</span></span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#fleet" class="nav-link">Fleet</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#testimonials" class="nav-link">Drivers</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn-gold" style="padding:10px 24px;font-size:0.7rem;">Get a Quote</a>
+    </div>
+
+    <button id="menu-toggle" class="md:hidden text-gold text-xl" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed top-0 left-0 right-0 z-40 pt-20 pb-6 px-6 flex flex-col gap-4">
+    <a href="#about" class="nav-link text-base py-2" onclick="toggleMenu()">About</a>
+    <a href="#fleet" class="nav-link text-base py-2" onclick="toggleMenu()">Fleet</a>
+    <a href="#services" class="nav-link text-base py-2" onclick="toggleMenu()">Services</a>
+    <a href="#testimonials" class="nav-link text-base py-2" onclick="toggleMenu()">Drivers</a>
+    <a href="#contact" class="nav-link text-base py-2" onclick="toggleMenu()">Contact</a>
+    <a href="#contact" class="btn-gold mt-2 justify-center" onclick="toggleMenu()">Get a Quote</a>
+  </div>
+
+  <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-content w-full px-6 md:px-16 lg:px-24 pt-28 pb-24">
+      <div class="max-w-3xl">
+        <div class="hero-eyebrow mb-6" data-aos="fade-right" data-aos-duration="800">
+          UAE Premier Logistics Partner
+        </div>
+
+        <h1 class="hero-headline mb-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
+          Reliable Logistics,<br><em>Unmatched Efficiency</em>
+        </h1>
+
+        <p class="hero-sub mb-10" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+          Powering the movement of goods across the UAE and beyond — with a premium fleet, experienced drivers, and end-to-end logistics solutions built for scale.
+        </p>
+
+        <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="450" data-aos-duration="700">
+          <a href="#contact" class="btn-gold">
+            <i class="fa-solid fa-arrow-right text-xs"></i> Get a Quote
+          </a>
+          <a href="#services" class="btn-outline">
+            Our Services
+          </a>
+        </div>
+
+        <!-- Hero stats bar -->
+        <div class="flex flex-wrap gap-8 mt-16 pt-12" style="border-top:1px solid rgba(201,168,76,0.15);" data-aos="fade-up" data-aos-delay="600">
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;">250<span style="font-size:1.4rem">+</span></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--steel);">Premium Vehicles</div>
+          </div>
+          <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;">12<span style="font-size:1.4rem">+</span></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--steel);">Years of Excellence</div>
+          </div>
+          <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;">98<span style="font-size:1.4rem">%</span></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--steel);">On-Time Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div style="position:absolute;bottom:40px;right:48px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--steel);writing-mode:vertical-rl;">Scroll</div>
+      <div style="width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 2s ease-in-out infinite;"></div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes scrollLine {
+      0%,100%{opacity:1;transform:scaleY(1);}
+      50%{opacity:0.4;transform:scaleY(0.6);}
+    }
+  </style>
+
+  <!-- ══════════════════════════════════ ABOUT ══════════════════════════════════ -->
+  <section id="about" class="py-24 px-6 md:px-16 lg:px-24" style="background:linear-gradient(180deg, var(--charcoal) 0%, var(--navy) 50%, var(--charcoal) 100%);">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: text -->
+      <div>
+        <div class="section-eyebrow mb-4" data-aos="fade-right">Who We Are</div>
+        <h2 class="section-title mb-8" data-aos="fade-up" data-aos-delay="100">
+          A Legacy of Trust,<br>Built on the Road
+        </h2>
+        <p class="text-steel mb-6 leading-relaxed" style="font-size:1.05rem;" data-aos="fade-up" data-aos-delay="200">
+          Glandar Transports is one of the UAE's most respected logistics and heavy-haulage companies. Headquartered in Ajman, we have spent over a decade delivering excellence through disciplined operations, cutting-edge fleet technology, and a people-first philosophy.
+        </p>
+        <p class="text-steel mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+          Whether it's cross-emirate freight, long-haul trucking, or specialized fleet management, we operate with a singular commitment: your cargo moves safely, on time, every time. Our team of certified drivers and logistics specialists represent the very best in the industry.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-card p-5">
+            <div class="text-gold mb-1" style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;">ISO Certified</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);">Quality Assured</div>
+          </div>
+          <div class="stat-card p-5">
+            <div class="text-gold mb-1" style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;">Fleet Coverage</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);">All 7 Emirates</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: visual accent -->
+      <div class="relative" data-aos="fade-left" data-aos-delay="200">
+        <div style="position:relative;padding:3px;background:linear-gradient(135deg,var(--gold),transparent 60%);">
+          <img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+            alt="Glandar fleet on road"
+            style="width:100%;display:block;filter:brightness(0.85);"
+          />
+        </div>
+        <!-- Floating badge -->
+        <div style="position:absolute;bottom:-24px;left:-24px;background:var(--charcoal-mid);border:1px solid var(--gold);padding:20px 28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Established</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--white);line-height:1;">2009</div>
+          <div style="font-family:'Barlow',sans-serif;font-size:0.8rem;color:var(--steel);">Ajman, UAE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
+
+  <!-- ══════════════════════════════════ FLEET ══════════════════════════════════ -->
+  <section id="fleet" class="py-24 fleet-bg relative overflow-hidden">
+    <div class="absolute inset-0" style="background:linear-gradient(to bottom,var(--charcoal) 0%,rgba(10,22,40,0.85) 40%,var(--charcoal) 100%);"></div>
+
+    <div class="relative z-10 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="section-eyebrow justify-center mb-4" data-aos="fade-up" style="justify-content:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);">Our Fleet</span>
+        </div>
+        <h2 class="section-title mb-6" data-aos="fade-up" data-aos-delay="100">
+          250+ Premium Vehicles,<br><em style="font-style:italic;color:var(--gold-light);">Ready to Deliver</em>
+        </h2>
+        <p class="text-steel max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200" style="font-size:1rem;line-height:1.75;">
+          Our meticulously maintained fleet is the backbone of every delivery. GPS-monitored, regularly serviced, and operated only by certified professionals.
+        </p>
+      </div>
+
+      <!-- Big number -->
+      <div class="text-center mb-16" data-aos="zoom-in" data-aos-delay="100">
+        <div class="fleet-number">250<span style="font-size:40%">+</span></div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--steel);margin-top:8px;">Premium Vehicles in Active Service</div>
+        <div class="gold-stripe mt-4 mx-auto" style="width:200px;"></div>
+      </div>
+
+      <!-- Vehicle types -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="vehicle-badge p-6 text-center" data-aos="fade-up" data-aos-delay="0">
+          <i class="fa-solid fa-truck-moving text-gold text-3xl mb-4"></i>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.05em;color:var(--white);">Heavy Trucks</div>
+          <div class="text-steel mt-1" style="font-size:0.8rem;">Long-distance freight</div>
+        </div>
+        <div class="vehicle-badge p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-truck text-gold text-3xl mb-4"></i>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.05em;color:var(--white);">Flatbed Trailers</div>
+          <div class="text-steel mt-1" style="font-size:0.8rem;">Oversized & bulk cargo</div>
+        </div>
+        <div class="vehicle-badge p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-box text-gold text-3xl mb-4"></i>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.05em;color:var(--white);">Enclosed Trailers</div>
+          <div class="text-steel mt-1" style="font-size:0.8rem;">Secure goods transit</div>
+        </div>
+        <div class="vehicle-badge p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-oil-well text-gold text-3xl mb-4"></i>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.05em;color:var(--white);">Tanker Units</div>
+          <div class="text-steel mt-1" style="font-size:0.8rem;">Liquid & bulk materials</div>
+        </div>
+      </div>
+
+      <!-- Features strip -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div class="stat-card p-5 flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-satellite-dish text-gold text-xl flex-shrink-0"></i>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);">GPS Real-Time Monitoring</div>
+            <div class="text-steel" style="font-size:0.82rem;">Every vehicle tracked live</div>
+          </div>
+        </div>
+        <div class="stat-card p-5 flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-wrench text-gold text-xl flex-shrink-0"></i>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);">Preventive Maintenance</div>
+            <div class="text-steel" style="font-size:0.82rem;">Serviced every 5,000 km</div>
+          </div>
+        </div>
+        <div class="stat-card p-5 flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-shield-halved text-gold text-xl flex-shrink-0"></i>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);">Fully Insured Fleet</div>
+            <div class="text-steel" style="font-size:0.82rem;">Comprehensive coverage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
+
+  <!-- ══════════════════════════════════ SERVICES ══════════════════════════════════ -->
+  <section id="services" class="py-24 px-6 md:px-16 lg:px-24" style="background:var(--charcoal-mid);">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16">
+        <div class="section-eyebrow mb-4" data-aos="fade-right">What We Do</div>
+        <div class="flex flex-col md:flex-row md:items-end gap-6 justify-between">
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+            Core Services Built<br>for Demanding Operations
+          </h2>
+          <p class="text-steel max-w-sm" data-aos="fade-up" data-aos-delay="200" style="font-size:0.95rem;line-height:1.7;">
+            Three pillars of excellence — each designed to give your business a decisive advantage in the UAE's logistics landscape.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Dispatch -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon mb-6">
+            <i class="fa-solid fa-radio"></i>
+          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Service 01</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:14px;">Dispatch Operations</h3>
+          <p class="text-steel mb-6" style="font-size:0.92rem;line-height:1.75;">
+            Our 24/7 dispatch control room coordinates every load with military precision — optimizing routes, reducing deadhead miles, and ensuring drivers are always productive. We connect businesses with the right truck at the right time.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> 24/7 Live Dispatch Center
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Route Optimization Engine
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Load Planning & Coordination
+            </li>
+          </ul>
+        </div>
+
+        <!-- Long-Haul -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-icon mb-6">
+            <i class="fa-solid fa-road"></i>
+          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Service 02</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:14px;">Long-Haul Trucking</h3>
+          <p class="text-steel mb-6" style="font-size:0.92rem;line-height:1.75;">
+            From Ajman to Musandam, across the GCC or throughout the UAE — our long-haul trucking service delivers without compromise. Certified drivers, premium heavy-duty rigs, and a safety culture built into every kilometer.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Inter-emirate & GCC Routes
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Certified Professional Drivers
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Heavy-Duty & Oversized Loads
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fleet Management -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon mb-6">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Service 03</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:14px;">Fleet Management</h3>
+          <p class="text-steel mb-6" style="font-size:0.92rem;line-height:1.75;">
+            Comprehensive fleet management solutions for companies that want the reliability of Glandar's operations without the overhead. We handle maintenance scheduling, driver compliance, fuel monitoring, and full reporting.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Full Maintenance Management
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Driver Compliance & Reporting
+            </li>
+            <li class="flex items-center gap-3 text-steel" style="font-size:0.88rem;">
+              <i class="fa-solid fa-check text-gold text-xs"></i> Fuel Efficiency Analytics
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA Strip -->
+      <div style="margin-top:48px;padding:36px 40px;background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(10,22,40,0.4));border:1px solid rgba(201,168,76,0.2);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--white);">Ready to Move Smarter?</div>
+          <div class="text-steel" style="font-size:0.9rem;">Talk to our logistics experts today — no commitment required.</div>
+        </div>
+        <a href="#contact" class="btn-gold">
+          <i class="fa-solid fa-phone text-xs"></i> Contact Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
+
+  <!-- ══════════════════════════════════ TESTIMONIALS ══════════════════════════════════ -->
+  <section id="testimonials" class="py-24 px-6 md:px-16 lg:px-24" style="background:var(--charcoal);">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="section-eyebrow justify-center mb-4" style="justify-content:center;" data-aos="fade-up">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);">Driver Stories</span>
+        </div>
+        <h2 class="section-title mb-4" data-aos="fade-up" data-aos-delay="100">
+          Voices From Behind the Wheel
+        </h2>
+        <p class="text-steel max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="200" style="font-size:0.95rem;line-height:1.7;">
+          At Glandar Transports, our people are our greatest asset. Hear directly from the men who keep our fleet moving.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- T1 -->
+        <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="0">
+          <div class="stars mb-5">★★★★★</div>
+          <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
+            "I've been a long-haul driver for 14 years. Glandar is the first company that genuinely puts driver welfare first. Pre-trip safety checks, proper rest schedules, and a management team that actually listens — it's a different culture here."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:20px;display:flex;align-items:center;gap:14px;">
+            <div style="width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--charcoal);flex-shrink:0;">AK</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);letter-spacing:0.03em;">Ahmed Al Karimi</div>
+              <div class="text-gold" style="font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.1em;">Senior Long-Haul Driver · 6 Years</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T2 -->
+        <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="150">
+          <div class="stars mb-5">★★★★★</div>
+          <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
+            "The trucks are always in top condition — that means everything on long routes. Glandar's maintenance team is exceptional. I feel safe every time I'm on the road with a Glandar rig. This is professionalism at its highest level."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:20px;display:flex;align-items:center;gap:14px;">
+            <div style="width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--charcoal);flex-shrink:0;">RS</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);letter-spacing:0.03em;">Rajan Singh</div>
+              <div class="text-gold" style="font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.1em;">Heavy Transport Operator · 4 Years</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T3 -->
+        <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars mb-5">★★★★★</div>
+          <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
+            "I joined Glandar as a junior driver and within two years I was leading my own dispatch route. The training programs, the team culture, the fair compensation — Glandar has given me a career, not just a job. Truly grateful."
+          </p>
+          <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:20px;display:flex;align-items:center;gap:14px;">
+            <div style="width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--charcoal);flex-shrink:0;">MF</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--white);letter-spacing:0.03em;">Mohammed Farooq</div>
+              <div class="text-gold" style="font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.1em;">Route Lead Driver · 3 Years</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
+
+  <!-- ══════════════════════════════════ CONTACT ══════════════════════════════════ -->
+  <section id="contact" class="py-24 px-6 md:px-16 lg:px-24" style="background:linear-gradient(180deg, var(--charcoal-mid), var(--navy));">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left -->
+        <div>
+          <div class="section-eyebrow mb-4" data-aos="fade-right">Get in Touch</div>
+          <h2 class="section-title mb-6" data-aos="fade-up" data-aos-delay="100">
+            Let's Move Your<br><em style="color:var(--gold-light);font-style:italic;">Business Forward</em>
+          </h2>
+          <p class="text-steel mb-10" style="font-size:1rem;line-height:1.75;" data-aos="fade-up" data-aos-delay="200">
+            Our team is available around the clock. Whether you need an urgent quote, have a complex fleet requirement, or want to explore a long-term logistics partnership — reach out and we'll respond within the hour.
+          </p>
+
+          <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+            <!-- Address -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Office Address</div>
+                <div style="font-weight:500;color:var(--white);">Horizon Tower, D Block, Office 1503</div>
+                <div class="text-steel" style="font-size:0.9rem;">Ajman, United Arab Emirates</div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Phone</div>
+                <div style="font-weight:500;color:var(--white);">+971 6 741 2723</div>
+                <div class="text-steel" style="font-size:0.9rem;">Available 24 hours / 7 days</div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Email</div>
+                <a href="mailto:info@glandartransports.ae" style="font-weight:500;color:var(--white);text-decoration:none;">info@glandartransports.ae</a>
+                <div class="text-steel" style="font-size:0.9rem;">We reply within the hour</div>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Dispatch Hours</div>
+                <div style="font-weight:500;color:var(--white);">24/7 Operations Center</div>
+                <div class="text-steel" style="font-size:0.9rem;">We never go offline</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Action card -->
+        <div data-aos="fade-left" data-aos-delay="200">
+          <div style="background:linear-gradient(145deg,var(--charcoal-light),rgba(10,22,40,0.5));border:1px solid rgba(201,168,76,0.2);padding:44px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:8px;">Ready to Get Started?</div>
+            <p class="text-steel mb-10" style="font-size:0.92rem;line-height:1.7;">
+              Choose your preferred way to connect. Our logistics team will respond within 60 minutes during business hours.
+            </p>
+
+            <div class="space-y-4">
+              <!-- Call button -->
+              <a href="tel:0097167412723" style="display:flex;align-items:center;gap:16px;padding:18px 24px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--charcoal);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.08em;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(201,168,76,0.4)'"
+                onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                <i class="fa-solid fa-phone text-lg"></i>
+                <div>
+                  <div>Call Us Now</div>
+                  <div style="font-size:0.75rem;font-weight:400;opacity:0.8;">+971 6 741 2723</div>
+                </div>
+                <i class="fa-solid fa-arrow-right ml-auto text-sm"></i>
+              </a>
+
+              <!-- Email button -->
+              <a href="mailto:info@glandartransports.ae" style="display:flex;align-items:center;gap:16px;padding:18px 24px;background:transparent;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.08em;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));"
+                onmouseover="this.style.background='rgba(201,168,76,0.1)';this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">
+                <i class="fa-solid fa-envelope text-lg"></i>
+                <div>
+                  <div>Email Us</div>
+                  <div style="font-size:0.75rem;font-weight:400;opacity:0.7;">info@glandartransports.ae</div>
+                </div>
+                <i class="fa-solid fa-arrow-right ml-auto text-sm"></i>
+              </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);display:flex;flex-wrap:wrap;gap:16px;">
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--steel);">
+                <i class="fa-solid fa-shield-halved text-gold text-xs"></i> Licensed & Insured
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--steel);">
+                <i class="fa-solid fa-star text-gold text-xs"></i> 12+ Years Experience
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--steel);">
+                <i class="fa-solid fa-check-circle text-gold text-xs"></i> UAE Registered
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ FOOTER ══════════════════════════════════ -->
+  <footer class="py-12 px-6 md:px-16 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <a href="#hero" class="flex items-center gap-3 no-underline mb-4">
+            <div style="width:34px;height:34px;background:linear-gradient(135deg,#C9A84C,#E8C96A);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px))">
+              <i class="fa-solid fa-truck" style="color:#141416;font-size:0.8rem"></i>
+            </div>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;color:#F5F3EE;">GLANDAR <span class="text-gold">TRANSPORTS L.L.C</span></span>
+          </a>
+          <p class="text-steel" style="font-size:0.85rem;line-height:1.7;">Powering the UAE's freight network with precision, reliability, and unmatched fleet capability.</p>
+        </div>
+
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Quick Links</div>
+          <div class="space-y-2">
+            <a href="#about" class="block text-steel hover:text-gold transition-colors" style="font-size:0.88rem;text-decoration:none;">About Us</a>
+            <a href="#fleet" class="block text-steel hover:text-gold transition-colors" style="font-size:0.88rem;text-decoration:none;">Our Fleet</a>
+            <a href="#services" class="block text-steel hover:text-gold transition-colors" style="font-size:0.88rem;text-decoration:none;">Services</a>
+            <a href="#testimonials" class="block text-steel hover:text-gold transition-colors" style="font-size:0.88rem;text-decoration:none;">Driver Stories</a>
+            <a href="#contact" class="block text-steel hover:text-gold transition-colors" style="font-size:0.88rem;text-decoration:none;">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Contact</div>
+          <div class="space-y-2 text-steel" style="font-size:0.88rem;">
+            <p>Horizon Tower, D Block, Office 1503</p>
+            <p>Ajman, UAE</p>
+            <a href="tel:0097167412723" class="block hover:text-gold transition-colors" style="text-decoration:none;">+971 6 741 2723</a>
+            <a href="mailto:info@glandartransports.ae" class="block hover:text-gold transition-colors" style="text-decoration:none;">info@glandartransports.ae</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gold-rule mb-6"></div>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-steel" style="font-size:0.78rem;">© 2025 Glandar Transports LLC. All rights reserved. Ajman, UAE.</div>
+        <div class="text-steel" style="font-size:0.78rem;">Logistics · Fleet Management · Long-Haul Trucking</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <div id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fa-solid fa-chevron-up" style="font-size:0.85rem;"></i>
+  </div>
+
+  <!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════ -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // AOS Init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      // Scroll to top button
+      const btn = document.getElementById('scroll-top');
+      if (window.scrollY > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        menu.classList.add('hidden');
+        icon.className = 'fa-solid fa-bars';
+      }
+    }
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('mobile-menu');
+      const toggle = document.getElementById('menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target) && !menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>
