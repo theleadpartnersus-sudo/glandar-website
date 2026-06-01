@@ -406,7 +406,6 @@
 </head>
 <body>
 
-  <!-- ══════════════════════════════════ NAV ══════════════════════════════════ -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-5 px-6 md:px-12 flex items-center justify-between">
     <a href="#hero" class="flex items-center gap-3 no-underline">
       <div style="width:38px;height:38px;background:linear-gradient(135deg,#C9A84C,#E8C96A);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))">
@@ -429,7 +428,6 @@
     </button>
   </nav>
 
-  <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden fixed top-0 left-0 right-0 z-40 pt-20 pb-6 px-6 flex flex-col gap-4">
     <a href="#about" class="nav-link text-base py-2" onclick="toggleMenu()">About</a>
     <a href="#fleet" class="nav-link text-base py-2" onclick="toggleMenu()">Fleet</a>
@@ -439,7 +437,6 @@
     <a href="#contact" class="btn-gold mt-2 justify-center" onclick="toggleMenu()">Get a Quote</a>
   </div>
 
-  <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
   <section id="hero">
     <div class="hero-content w-full px-6 md:px-16 lg:px-24 pt-28 pb-24">
       <div class="max-w-3xl">
@@ -464,7 +461,6 @@
           </a>
         </div>
 
-        <!-- Hero stats bar -->
         <div class="flex flex-wrap gap-8 mt-16 pt-12" style="border-top:1px solid rgba(201,168,76,0.15);" data-aos="fade-up" data-aos-delay="600">
           <div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;">250<span style="font-size:1.4rem">+</span></div>
@@ -484,7 +480,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div style="position:absolute;bottom:40px;right:48px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--steel);writing-mode:vertical-rl;">Scroll</div>
       <div style="width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 2s ease-in-out infinite;"></div>
@@ -498,11 +493,9 @@
     }
   </style>
 
-  <!-- ══════════════════════════════════ ABOUT ══════════════════════════════════ -->
   <section id="about" class="py-24 px-6 md:px-16 lg:px-24" style="background:linear-gradient(180deg, var(--charcoal) 0%, var(--navy) 50%, var(--charcoal) 100%);">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Left: text -->
       <div>
         <div class="section-eyebrow mb-4" data-aos="fade-right">Who We Are</div>
         <h2 class="section-title mb-8" data-aos="fade-up" data-aos-delay="100">
@@ -527,7 +520,6 @@
         </div>
       </div>
 
-      <!-- Right: visual accent -->
       <div class="relative" data-aos="fade-left" data-aos-delay="200">
         <div style="position:relative;padding:3px;background:linear-gradient(135deg,var(--gold),transparent 60%);">
           <img
@@ -536,7 +528,6 @@
             style="width:100%;display:block;filter:brightness(0.85);"
           />
         </div>
-        <!-- Floating badge -->
         <div style="position:absolute;bottom:-24px;left:-24px;background:var(--charcoal-mid);border:1px solid var(--gold);padding:20px 28px;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Established</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--white);line-height:1;">2009</div>
@@ -548,7 +539,6 @@
 
   <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
 
-  <!-- ══════════════════════════════════ FLEET ══════════════════════════════════ -->
   <section id="fleet" class="py-24 fleet-bg relative overflow-hidden">
     <div class="absolute inset-0" style="background:linear-gradient(to bottom,var(--charcoal) 0%,rgba(10,22,40,0.85) 40%,var(--charcoal) 100%);"></div>
 
@@ -565,14 +555,12 @@
         </p>
       </div>
 
-      <!-- Big number -->
       <div class="text-center mb-16" data-aos="zoom-in" data-aos-delay="100">
         <div class="fleet-number">250<span style="font-size:40%">+</span></div>
         <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--steel);margin-top:8px;">Premium Vehicles in Active Service</div>
         <div class="gold-stripe mt-4 mx-auto" style="width:200px;"></div>
       </div>
 
-      <!-- Vehicle types -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="vehicle-badge p-6 text-center" data-aos="fade-up" data-aos-delay="0">
           <i class="fa-solid fa-truck-moving text-gold text-3xl mb-4"></i>
@@ -596,7 +584,6 @@
         </div>
       </div>
 
-      <!-- Features strip -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
         <div class="stat-card p-5 flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
           <i class="fa-solid fa-satellite-dish text-gold text-xl flex-shrink-0"></i>
@@ -625,7 +612,6 @@
 
   <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
 
-  <!-- ══════════════════════════════════ SERVICES ══════════════════════════════════ -->
   <section id="services" class="py-24 px-6 md:px-16 lg:px-24" style="background:var(--charcoal-mid);">
     <div class="max-w-7xl mx-auto">
       <div class="mb-16">
@@ -642,7 +628,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Dispatch -->
         <div class="service-card p-8" data-aos="fade-up" data-aos-delay="0">
           <div class="service-icon mb-6">
             <i class="fa-solid fa-radio"></i>
@@ -665,7 +650,6 @@
           </ul>
         </div>
 
-        <!-- Long-Haul -->
         <div class="service-card p-8" data-aos="fade-up" data-aos-delay="150">
           <div class="service-icon mb-6">
             <i class="fa-solid fa-road"></i>
@@ -688,7 +672,6 @@
           </ul>
         </div>
 
-        <!-- Fleet Management -->
         <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
           <div class="service-icon mb-6">
             <i class="fa-solid fa-gears"></i>
@@ -712,7 +695,6 @@
         </div>
       </div>
 
-      <!-- CTA Strip -->
       <div style="margin-top:48px;padding:36px 40px;background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(10,22,40,0.4));border:1px solid rgba(201,168,76,0.2);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;" data-aos="fade-up" data-aos-delay="100">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--white);">Ready to Move Smarter?</div>
@@ -727,7 +709,6 @@
 
   <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
 
-  <!-- ══════════════════════════════════ TESTIMONIALS ══════════════════════════════════ -->
   <section id="testimonials" class="py-24 px-6 md:px-16 lg:px-24" style="background:var(--charcoal);">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
@@ -744,7 +725,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- T1 -->
         <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="0">
           <div class="stars mb-5">★★★★★</div>
           <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
@@ -759,7 +739,6 @@
           </div>
         </div>
 
-        <!-- T2 -->
         <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="150">
           <div class="stars mb-5">★★★★★</div>
           <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
@@ -774,7 +753,6 @@
           </div>
         </div>
 
-        <!-- T3 -->
         <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="300">
           <div class="stars mb-5">★★★★★</div>
           <p class="mb-8" style="font-family:'Barlow',sans-serif;font-size:1rem;line-height:1.8;color:var(--white);font-style:italic;">
@@ -795,12 +773,10 @@
 
   <hr class="gold-rule mx-6 md:mx-16 lg:mx-24" />
 
-  <!-- ══════════════════════════════════ CONTACT ══════════════════════════════════ -->
   <section id="contact" class="py-24 px-6 md:px-16 lg:px-24" style="background:linear-gradient(180deg, var(--charcoal-mid), var(--navy));">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        <!-- Left -->
         <div>
           <div class="section-eyebrow mb-4" data-aos="fade-right">Get in Touch</div>
           <h2 class="section-title mb-6" data-aos="fade-up" data-aos-delay="100">
@@ -811,19 +787,19 @@
           </p>
 
           <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
-            <!-- Address -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
               <div>
                 <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Office Address</div>
-                <div style="font-weight:500;color:var(--white);">Horizon Tower, D Block, Office 1503</div>
-                <div class="text-steel" style="font-size:0.9rem;">Ajman, United Arab Emirates</div>
+                <a href="https://maps.google.com/?q=Horizon+Tower+D,+Ajman" target="_blank" rel="noopener" style="text-decoration:none; display: block;">
+                  <div style="font-weight:500;color:var(--white); transition: color 0.3s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#F5F3EE'">Horizon Tower, D Block, Office 1503</div>
+                  <div class="text-steel" style="font-size:0.9rem;">Ajman, United Arab Emirates</div>
+                </a>
               </div>
             </div>
 
-            <!-- Phone -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fa-solid fa-phone"></i>
@@ -834,7 +810,6 @@
               </div>
             </div>
 
-            <!-- Email -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fa-solid fa-envelope"></i>
@@ -846,7 +821,6 @@
               </div>
             </div>
 
-            <!-- Hours -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fa-solid fa-clock"></i>
@@ -860,7 +834,6 @@
           </div>
         </div>
 
-        <!-- Right: Action card -->
         <div data-aos="fade-left" data-aos-delay="200">
           <div style="background:linear-gradient(145deg,var(--charcoal-light),rgba(10,22,40,0.5));border:1px solid rgba(201,168,76,0.2);padding:44px;">
             <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:8px;">Ready to Get Started?</div>
@@ -869,7 +842,6 @@
             </p>
 
             <div class="space-y-4">
-              <!-- Call button -->
               <a href="tel:0097167412723" style="display:flex;align-items:center;gap:16px;padding:18px 24px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--charcoal);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.08em;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));"
                 onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(201,168,76,0.4)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
@@ -881,7 +853,6 @@
                 <i class="fa-solid fa-arrow-right ml-auto text-sm"></i>
               </a>
 
-              <!-- Email button -->
               <a href="mailto:info@glandartransports.ae" style="display:flex;align-items:center;gap:16px;padding:18px 24px;background:transparent;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.08em;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));"
                 onmouseover="this.style.background='rgba(201,168,76,0.1)';this.style.transform='translateY(-2px)'"
                 onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">
@@ -894,7 +865,6 @@
               </a>
             </div>
 
-            <!-- Trust badges -->
             <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);display:flex;flex-wrap:wrap;gap:16px;">
               <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--steel);">
                 <i class="fa-solid fa-shield-halved text-gold text-xs"></i> Licensed & Insured
@@ -913,7 +883,6 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ FOOTER ══════════════════════════════════ -->
   <footer class="py-12 px-6 md:px-16 lg:px-24">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
@@ -941,8 +910,10 @@
         <div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Contact</div>
           <div class="space-y-2 text-steel" style="font-size:0.88rem;">
-            <p>Horizon Tower, D Block, Office 1503</p>
-            <p>Ajman, UAE</p>
+            <a href="https://maps.google.com/?q=Horizon+Tower+D,+Ajman" target="_blank" rel="noopener" style="text-decoration:none;color:inherit; display: block;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='inherit'">
+              <p>Horizon Tower, D Block, Office 1503</p>
+              <p>Ajman, UAE</p>
+            </a>
             <a href="tel:0097167412723" class="block hover:text-gold transition-colors" style="text-decoration:none;">+971 6 741 2723</a>
             <a href="mailto:info@glandartransports.ae" class="block hover:text-gold transition-colors" style="text-decoration:none;">info@glandartransports.ae</a>
           </div>
@@ -958,12 +929,10 @@
     </div>
   </footer>
 
-  <!-- Scroll to top -->
   <div id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <i class="fa-solid fa-chevron-up" style="font-size:0.85rem;"></i>
   </div>
 
-  <!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════ -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     // AOS Init
